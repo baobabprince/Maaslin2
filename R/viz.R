@@ -442,7 +442,8 @@ maaslin2_association_plots <-
                                 fontface = "italic"
                             )
                 } else{
-                    # if Metadata is categorical generate a boxplot
+                    # if Metadata is categorical generate a pl
+                    plot
                     ### check if the variable is categorical
                     
                     logging::loginfo(
@@ -468,7 +469,7 @@ maaslin2_association_plots <-
                     temp_plot <-
                         ggplot2::ggplot(
                             data = input_df, ggplot2::aes(xnames, y)) +
-                        ggplot2::geom_boxplot(
+                        ggplot2::geom_violin(
                             ggplot2::aes(fill = x),
                             outlier.alpha = 0.0,
                             na.rm = TRUE,
