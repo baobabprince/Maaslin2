@@ -438,7 +438,7 @@ maaslin2_association_plots <-
                                     formatC(length(input_df[, 'x']))
                                 ) ,
                                 color = "black",
-                                size = 2,
+                                size = 1,
                                 fontface = "italic"
                             )
                 } else{
@@ -513,7 +513,7 @@ maaslin2_association_plots <-
                                 results_value
                             ) ,
                             color = "black",
-                            size = 2,
+                            size = 1,
                             fontface = "italic"
                         )
                 }
