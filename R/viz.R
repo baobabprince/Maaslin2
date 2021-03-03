@@ -447,7 +447,7 @@ maaslin2_association_plots <-
                     ### check if the variable is categorical
                     
                     logging::loginfo(
-                        "Creating violin plot for categorical data, %s vs %s",
+                        "Creating boxplot for categorical data, %s vs %s",
                         x_label,
                         y_label)
                     input_df['x'] <- lapply(input_df['x'], as.character)
@@ -469,11 +469,12 @@ maaslin2_association_plots <-
                     temp_plot <-
                         ggplot2::ggplot(
                             data = input_df, ggplot2::aes(xnames, y)) +
-                        ggplot2::geom_violin(
+                        ggplot2::geom_boxplot(
                             ggplot2::aes(fill = x),
                             outlier.alpha = 0.0,
                             na.rm = TRUE,
                             alpha = .5,
+                            notch = TRUE,
                             show.legend = FALSE
                         ) +
                         ggplot2::geom_point(
